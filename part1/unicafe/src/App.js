@@ -14,7 +14,7 @@ const Button = ({ text, onClick }) => {
 
 const Stat = ({ type, count }) => {
   return (
-    <p>{type} {count}</p>
+    <div>{type} {count}</div>
   )
 }
 
@@ -34,6 +34,8 @@ const App = () => {
       <Stat type={"good"} count={good} />
       <Stat type={"neutral"} count={neutral} />
       <Stat type={"bad"} count={bad} />
+      <div>average {(good * 1 + bad * -1) / (good + neutral + bad)}</div>
+      <div>positive {good / (good + neutral + bad) * 100} %</div>
     </>
   )
 }
