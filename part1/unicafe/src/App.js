@@ -19,6 +19,16 @@ const Stat = ({ name, value }) => {
 }
 
 const Statistics = ({ good, neutral, bad }) => {
+
+  if (!good && !neutral && !bad) {
+    return (
+    <>
+      <Title title={"statistics"} />
+      <div>No feedback given</div>
+    </>
+    )
+  }
+
   return (
     <>
       <Title title={"statistics"} />
